@@ -32,21 +32,32 @@
             font-weight: bold;
         }
         .slider {
-            position: relative;
             max-width: 100%;
-            height: 400px;
+            position: relative;
             overflow: hidden;
+            height: 400px;
         }
-        .slider img {
-            position: absolute;
+        .slides img {
             width: 100%;
             height: 400px;
             object-fit: cover;
+            position: absolute;
             opacity: 0;
-            transition: opacity 1s ease-in-out;
+            animation: slideShow 18s infinite;
         }
-        .slider img.active {
-            opacity: 1;
+        .slides img:nth-child(1) {animation-delay: 0s;}
+        .slides img:nth-child(2) {animation-delay: 3s;}
+        .slides img:nth-child(3) {animation-delay: 6s;}
+        .slides img:nth-child(4) {animation-delay: 9s;}
+        .slides img:nth-child(5) {animation-delay: 12s;}
+        .slides img:nth-child(6) {animation-delay: 15s;}
+
+        @keyframes slideShow {
+            0% {opacity: 0;}
+            5% {opacity: 1;}
+            25% {opacity: 1;}
+            30% {opacity: 0;}
+            100% {opacity: 0;}
         }
 
         section {
@@ -109,7 +120,7 @@
             .slider {
                 height: 200px;
             }
-            .slider img {
+            .slides img {
                 height: 200px;
             }
         }
@@ -129,12 +140,14 @@
     </nav>
 
     <div class="slider">
-        <img src="image1.jpg" class="active" alt="Project 1">
-        <img src="image2.jpg" alt="Project 2">
-        <img src="image3.jpg" alt="Project 3">
-        <img src="image4.jpg" alt="Project 4">
-        <img src="image5.jpg" alt="Project 5">
-        <img src="image6.jpg" alt="Project 6">
+        <div class="slides">
+            <img src="image1.jpg" alt="Project 1">
+            <img src="image2.jpg" alt="Project 2">
+            <img src="image3.jpg" alt="Project 3">
+            <img src="image4.jpg" alt="Project 4">
+            <img src="image5.jpg" alt="Project 5">
+            <img src="image6.jpg" alt="Project 6">
+        </div>
     </div>
 
     <section id="about">
@@ -188,16 +201,5 @@
     <footer>
         &copy; 2025 شركة سكايب للمقاولات - جميع الحقوق محفوظة
     </footer>
-
-    <script>
-    // Simple JS slider rotation every 3 seconds
-    let slides = document.querySelectorAll('.slider img');
-    let current = 0;
-    setInterval(() => {
-        slides[current].classList.remove('active');
-        current = (current + 1) % slides.length;
-        slides[current].classList.add('active');
-    }, 3000);
-    </script>
 </body>
 </html>
