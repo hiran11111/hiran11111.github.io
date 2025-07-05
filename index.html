@@ -137,15 +137,49 @@
     </nav>
 
     <div class="slider">
-        <div class="slides">
-            <img src="image1.jpg" alt="Project 1">
-            <img src="image2.jpg" alt="Project 2">
-            <img src="image3.jpg" alt="Project 3">
-            <img src="image4.jpg" alt="Project 4">
-            <img src="image5.jpg" alt="Project 5">
-            <img src="image6.jpg" alt="Project 6">
-        </div>
-    </div>
+  <div class="slides">
+    <img src="image1.jpg" alt="Project 1">
+    <img src="image2.jpg" alt="Project 2">
+    <img src="image3.jpg" alt="Project 3">
+    <img src="image4.jpg" alt="Project 4">
+    <img src="image5.jpg" alt="Project 5">
+    <img src="image6.jpg" alt="Project 6">
+  </div>
+</div>
+
+<style>
+.slider {
+  max-width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.slides {
+  display: flex;
+  width: 600%;
+  animation: slide 15s infinite;
+}
+
+.slides img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+@keyframes slide {
+  0% {transform: translateX(0%);}
+  16% {transform: translateX(0%);}
+  20% {transform: translateX(-100%);}
+  36% {transform: translateX(-100%);}
+  40% {transform: translateX(-200%);}
+  56% {transform: translateX(-200%);}
+  60% {transform: translateX(-300%);}
+  76% {transform: translateX(-300%);}
+  80% {transform: translateX(-400%);}
+  96% {transform: translateX(-400%);}
+  100% {transform: translateX(0%);}
+}
+</style>
 
     <section id="about">
         <h2>من نحن</h2>
