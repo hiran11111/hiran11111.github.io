@@ -107,7 +107,8 @@ header {
 .hero {
   /* Use a semi‑transparent version of the company logo as a subtle hero background. */
   background-image: url('assets/logo_watermark_transparent_new.png');
-  background-size: contain;
+  /* Scale the watermark to cover the entire hero area instead of being contained. */
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-color: #fff7ef;
